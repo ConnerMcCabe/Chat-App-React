@@ -1,8 +1,14 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const ChatKit = require('@pusher/chatkit-server')
 
 const app = express()
+
+const chatkit = new ChatKit.default({
+  instanceLocator: 'coming soon',
+  key: 'coming soon',
+})
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
