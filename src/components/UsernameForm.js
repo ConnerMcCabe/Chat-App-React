@@ -8,7 +8,16 @@ class UsernameForm extends React.Component {
     }
   }
 
-
+  render() {
+    return(
+      <div>
+        <form>
+          <input type="text" placeholder="username?"/>
+          <input type="submit"/>
+        </form>
+      </div>
+    )   
+  }
 }
 
 export default UsernameForm;
