@@ -1,5 +1,5 @@
 import React from 'react';
-import { thisExpression } from '@babel/types';
+
 
 class UsernameForm extends React.Component {
   constructor(props) {
@@ -7,6 +7,9 @@ class UsernameForm extends React.Component {
     this.state = {
       username: '',
     }
+
+    this.onChange = this.onChange.bin(this)
+    this.onSubmit = this.onSubmit.bin(this)
   }
 
   onChange(e) {
@@ -14,10 +17,14 @@ class UsernameForm extends React.Component {
       username: e.target.value,
     })
   }
+  onSubmit(e) {
+    e.preventDefault()
+    this.props.onSubmit(this.state.username)
+  }
   render() {
     return(
       <div>
-        <form>
+        <form onSubmit={this.onSubmit}>
           <input 
             type="text" 
             placeholder="username?"
