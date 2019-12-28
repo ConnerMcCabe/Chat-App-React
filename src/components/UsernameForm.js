@@ -8,8 +8,8 @@ class UsernameForm extends React.Component {
       username: '',
     }
 
-    this.onChange = this.onChange.bin(this)
-    this.onSubmit = this.onSubmit.bin(this)
+    this.onChange = this.onChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
   }
 
   onChange(e) {
