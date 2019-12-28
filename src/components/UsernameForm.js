@@ -27,7 +27,7 @@ class UsernameForm extends React.Component {
         <form onSubmit={this.onSubmit}>
           <input 
             type="text" 
-            placeholder="username?"
+            placeholder="your username?"
             onChange={this.onChange}
           />
           <input type="submit"/>
