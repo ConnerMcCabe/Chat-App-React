@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UsernameForm from '../components/UsernameForm';
+import ChatScreen from '../components/ChatScreen';
 import './App.css';
 
 class App extends Component {
@@ -7,6 +8,7 @@ class App extends Component {
     super()
     this.state = {
       currentUsername: '',
+      currentScreen: 'usernameScreen'
     }
     this.onUsernameSubmitted = this.onUsernameSubmitted.bind(this)
   }
@@ -20,7 +22,8 @@ class App extends Component {
     })
       .then(response => {
         this.setState({
-          currentUsername: username
+          currentUsername: username,
+          currentScreen: 'ChatScreen'
         })
       })
       .catch(error => console.error('error', error))
@@ -28,8 +31,12 @@ class App extends Component {
   
   
   render(){
-    return <UsernameForm onSubmit={username => alert(username)} />
-    
+    if (this.state.currentScreen === 'usernameScreen') {
+      return <UsernameForm onSubmit={username => alert(username)} />
+    }
+    if (this.state.currentScreen === 'ChatScreen') {
+      return <ChatScreen currentUsername={this.state.currentUsername} />
+    }
   }
 }
 
