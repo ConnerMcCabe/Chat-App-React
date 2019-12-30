@@ -1,27 +1,30 @@
 import React, { Component } from 'react';
 // import Chatkit from '@pusher/chatkit-client';
+import MessageList from './MessageList';
 
 class ChatScreen extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentUser: {}
+      currentUser: {},
+      currentRoom: {},
+      messages: []
     }
   }
 
-  // componentDidMount() {
-  //   const chatManger = new Chatkit.chatManger({
-  //     instanceLocator: 'coming soon',
-  //     userId: this.props.currentUsername,
-  //     tokenProvider: new Chatkit.tokenProvider({
-  //       url: 'http://localhost:3000/authenticate',
-  //     }),
-  //   })
-  //   chatManger.connect().then(currentUser => {
-  //     this.setState({ currentUser })
-  //   }) .catch(error => console.error("error", error))
-  // }
-
+/*  componentDidMount() {
+    const chatManger = new Chatkit.chatManger({
+      instanceLocator: 'coming soon',
+      userId: this.props.currentUsername,
+      tokenProvider: new Chatkit.tokenProvider({
+        url: 'http://localhost:3000/authenticate',
+      }),
+    })
+    chatManger.connect().then(currentUser => {
+      this.setState({ currentUser })
+    }) .catch(error => console.error("error", error))
+  }
+*/
   render() {
     
     return (

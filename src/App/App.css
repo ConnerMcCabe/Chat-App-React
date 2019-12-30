@@ -28,6 +28,19 @@
   padding: 20;
 
 }
+ul {
+  list-style: none;
+}
+li {
+  margin-top: 13;
+  margin-bottom: 13;
+}
+span {
+  font-weight: bold;
+}
+p {
+  font-size: 15;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
