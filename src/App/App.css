@@ -4,7 +4,30 @@
   flex-direction: column;
   text-align: center;
 }
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.talkBox {
+  display: flex;
+  flex: 1;
+}
+.online {
+  flex: none;
+  width: 300px;
+  padding: 20;
+  background-color: #282c34;
+  color: white;
+}
+.chat {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  padding: 20;
 
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
