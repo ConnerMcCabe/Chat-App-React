@@ -16,7 +16,7 @@
 }
 .online {
   flex: none;
-  width: 300px;
+  width: 15%;
   padding: 20;
   background-color: #282c34;
   color: white;

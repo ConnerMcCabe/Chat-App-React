@@ -28,10 +28,10 @@ class ChatScreen extends Component {
       <div className="container">
         <div className="talkBox">
           <aside className="online">
-            <h2>Aside placeholder</h2>
+            <h4>Aside placeholder</h4>
           </aside>
           <section className="chat">
-            <h2>Chat placeholder</h2>
+            <h1>Chat placeholder</h1>
           </section>
         </div>
       </div>
