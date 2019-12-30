@@ -8,7 +8,8 @@ class App extends Component {
     super()
     this.state = {
       currentUsername: '',
-      currentScreen: 'usernameScreen'
+      // currentScreen: 'usernameScreen'
+      currentScreen: 'ChatScreen'
     }
     this.onUsernameSubmitted = this.onUsernameSubmitted.bind(this)
   }
