@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-// import Chatkit from '@pusher/chatkit-client';
 import MessageList from './MessageList';
+import Chatkit from '@pusher/chatkit-client';
+
 
 class ChatScreen extends Component {
   constructor(props) {
@@ -12,19 +13,35 @@ class ChatScreen extends Component {
     }
   }
 
-/*  componentDidMount() {
+  componentDidMount() {
     const chatManger = new Chatkit.chatManger({
-      instanceLocator: 'coming soon',
+      instanceLocator: 'DB_INSTANCE',
       userId: this.props.currentUsername,
       tokenProvider: new Chatkit.tokenProvider({
-        url: 'http://localhost:3000/authenticate',
+        url: 'http://localhost:3001/authenticate',
       }),
     })
     chatManger.connect().then(currentUser => {
       this.setState({ currentUser })
-    }) .catch(error => console.error("error", error))
+      return currentUser.subscribeToRoom({
+        roomId: "2c0c5be2-8a9c-444e-bb69-a94ecffb2330",
+        //countryClub change later
+        messageLimit: 100,
+        hooks: {
+          onMessage: message => {
+            this.setState({
+              messages: [...this.state.messages, message],
+            })
+          },
+        },
+      })
+    })
+    .then(currentRoom => {
+      this.setState({ currentRoom })
+    })
+    .catch(error => console.error("error", error))
   }
-*/
+
   render() {
     
     return (
@@ -34,7 +51,7 @@ class ChatScreen extends Component {
             <h4>Aside placeholder</h4>
           </aside>
           <section className="chat">
-            <h1>Chat placeholder</h1>
+            <MessageList messages={this.state.messages} />
           </section>
         </div>
       </div>
